@@ -1,6 +1,6 @@
-package com.github.aursu.chinook.chinook.beans;
+package com.github.aursu.chinook.webapp.beans;
 
-import com.github.aursu.chinook.chinook.data.Artist;
+import com.github.aursu.chinook.webapp.data.Artist;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

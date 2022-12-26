@@ -1,4 +1,4 @@
-package com.github.aursu.chinook.chinook.data;
+package com.github.aursu.chinook.webapp.data;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

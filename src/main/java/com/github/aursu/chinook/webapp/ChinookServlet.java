@@ -1,8 +1,8 @@
-package com.github.aursu.chinook.chinook;
+package com.github.aursu.chinook.webapp;
 
-import com.github.aursu.chinook.chinook.beans.ArtistBean;
-import com.github.aursu.chinook.chinook.dao.ArtistDao;
-import com.github.aursu.chinook.chinook.data.Artist;
+import com.github.aursu.chinook.webapp.beans.ArtistBean;
+import com.github.aursu.chinook.webapp.dao.ArtistDao;
+import com.github.aursu.chinook.webapp.data.Artist;
 
 import java.io.*;
 import java.util.List;

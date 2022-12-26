@@ -7,7 +7,7 @@
         <packaging>war</packaging>
       </options>
     </properties>
-    <root id="archive" name="chinook-1.0-SNAPSHOT.war">
+    <root id="archive" name="chinook-webapp-1.0-SNAPSHOT.war">
       <element id="artifact" artifact-name="chinook:war exploded" />
     </root>
   </artifact>

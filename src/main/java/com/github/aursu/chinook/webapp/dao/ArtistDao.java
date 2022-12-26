@@ -1,6 +1,6 @@
-package com.github.aursu.chinook.chinook.dao;
+package com.github.aursu.chinook.webapp.dao;
 
-import com.github.aursu.chinook.chinook.data.Artist;
+import com.github.aursu.chinook.webapp.data.Artist;
 import lombok.AllArgsConstructor;
 
 import javax.sql.DataSource;
@@ -20,7 +20,7 @@ public class ArtistDao {
     public List<Artist> findAll() {
         try (Connection connection = ds.getConnection();
              PreparedStatement ps = connection.prepareStatement("select * from Artist");
-             ResultSet rs = ps.executeQuery();
+             ResultSet rs = ps.executeQuery()
         ) {
             List<Artist> result = new ArrayList<>();
             while (rs.next()) {
