@@ -24,6 +24,7 @@ Prerequisites:
         sudo ln -s /usr/local/apache-tomcat-10.1.4 /Library/Tomcat
         /Library/Tomcat/bin/startup.sh
 
+New project setup iside IntelliJ IDEA:
 
 * Create new project with `Jakarta EE` generator
 
