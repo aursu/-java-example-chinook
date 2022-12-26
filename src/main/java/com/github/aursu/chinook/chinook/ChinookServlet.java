@@ -6,16 +6,15 @@ import javax.servlet.annotation.*;
 
 @WebServlet(name = "chinookServlet", value = "/artists")
 public class ChinookServlet extends HttpServlet {
-    private String message;
-
     public void init() {
-        message = "Hello World!";
+
     }
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-
+        showArtists(request, response);
     }
 
-    public void destroy() {
+    private void showArtists(HttpServletRequest request, HttpServletResponse response) {
+
     }
 }
