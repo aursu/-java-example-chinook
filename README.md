@@ -22,9 +22,8 @@ Prerequisites:
         sudo chown -R username /usr/local/apache-tomcat-10.1.4
         chmod +x /usr/local/apache-tomcat-10.1.4/bin/*.sh
         sudo ln -s /usr/local/apache-tomcat-10.1.4 /Library/Tomcat
-        /Library/Tomcat/bin/startup.sh
 
-New project setup iside IntelliJ IDEA:
+New project setup inside IntelliJ IDEA:
 
 * Create new project with `Jakarta EE` generator
 
@@ -34,10 +33,10 @@ New project setup iside IntelliJ IDEA:
 
 * Select `Application server` as `Tomcat Server`
   
-    Create new if not exists followinng steps `New...` -> `Tomcat Server`, then set `Tomcat Home` to `/Library/Tomcat` (which is `CATALINA_HOME` path)
+    Create new if not exists following steps `New...` -> `Tomcat Server`, then set `Tomcat Home` to `/Library/Tomcat` (which is `CATALINA_HOME` path)
 
 * Select `Language` as `Java` and `Build System` as `Maven`
 
-* Then press `Next` button and select `Version` as `Java EE 8`, and press `Create` button.
+* Then press `Next` button and select `Version` as `Jakarta EE 9`, and press `Create` button.
 
 Done.
