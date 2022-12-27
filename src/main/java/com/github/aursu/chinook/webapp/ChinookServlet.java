@@ -3,13 +3,13 @@ package com.github.aursu.chinook.webapp;
 import com.github.aursu.chinook.webapp.beans.ArtistBean;
 import com.github.aursu.chinook.webapp.dao.ArtistDao;
 import com.github.aursu.chinook.webapp.data.Artist;
-
 import java.io.*;
 import java.util.List;
-import javax.annotation.Resource;
-import javax.servlet.ServletException;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
+import jakarta.annotation.Resource;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.*;
+import jakarta.servlet.annotation.*;
+
 import javax.sql.DataSource;
 
 @WebServlet(name = "chinookServlet", value = "/artists")
