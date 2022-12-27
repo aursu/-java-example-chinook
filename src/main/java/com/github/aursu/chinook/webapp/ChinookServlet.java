@@ -12,7 +12,7 @@ import jakarta.servlet.annotation.*;
 
 import javax.sql.DataSource;
 
-@WebServlet(name = "chinookServlet", value = "/artists")
+@WebServlet(name = "chinookServlet", value = {"/artists", "/add_artist"})
 public class ChinookServlet extends HttpServlet {
     @Resource(name = "jdbc/Chinook")
     private DataSource ds;
@@ -25,6 +25,12 @@ public class ChinookServlet extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         showArtists(request, response);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        artistDao.add(request.getParameter("artistname"));
+        response.sendRedirect("artists");
     }
 
     private void showArtists(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

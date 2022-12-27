@@ -13,6 +13,11 @@
 </head>
 <body>
 <jsp:useBean id="artistBean" type="com.github.aursu.chinook.webapp.beans.ArtistBean" scope="request"/>
+<form action="add_artist" method="post">
+    <label for="artistname">New artist:</label>
+    <input type="text" name="artistname" id="artistname">
+    <input type="submit" value="Add">
+</form>
 <table>
     <thead>
     <tr>

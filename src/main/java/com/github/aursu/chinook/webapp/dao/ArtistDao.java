@@ -35,4 +35,16 @@ public class ArtistDao {
             throw new RuntimeException(e);
         }
     }
+
+    public void add(String name) {
+        try (Connection connection = ds.getConnection();
+             PreparedStatement ps = connection.prepareStatement("insert into Artist (Name) values (?)")
+        ) {
+            ps.setString(1, name);
+            ps.executeUpdate();
+        }
+        catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
