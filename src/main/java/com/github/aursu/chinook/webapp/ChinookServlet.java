@@ -23,12 +23,25 @@ public class ChinookServlet extends HttpServlet {
         artistDao = new ArtistDao(ds);
     }
 
+    public void processRequest(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        String requestURI = request.getRequestURI();
+        if (requestURI.endsWith("/artists")) {
+            showArtists(request, response);
+        } else if (requestURI.endsWith("/add_artist")) {
+            addArtist(request, response);
+        }
+    }
+
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        showArtists(request, response);
+        processRequest(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        processRequest(request, response);
+    }
+
+    private void addArtist(HttpServletRequest request, HttpServletResponse response) throws IOException {
         artistDao.add(request.getParameter("artistname"));
         response.sendRedirect("artists");
     }
