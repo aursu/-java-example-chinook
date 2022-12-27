@@ -9,6 +9,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
     <title>Artists</title>
 </head>
 <body>
@@ -33,9 +34,9 @@
         <tr>
             <td>${a.id}</td>
             <td>${a.name}</td>
-            <td><a href="/delete_artist?id=${a.id}">delete</a></td>
-            <td><a href="/edit_artist?id=${a.id}">edit</a></td>
-            <td><a href="/show_albums_of?id=${a.id}">show</a></td>
+            <td><a href="delete_artist?id=${a.id}">delete</a></td>
+            <td><a href="edit_artist?id=${a.id}">edit</a></td>
+            <td><a href="show_albums_of?id=${a.id}">show</a></td>
         </tr>
     </c:forEach>
     </tbody>

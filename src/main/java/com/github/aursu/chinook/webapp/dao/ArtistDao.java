@@ -47,4 +47,49 @@ public class ArtistDao {
             throw new RuntimeException(e);
         }
     }
+
+    public void deleteById(int id) {
+        try (Connection connection = ds.getConnection();
+             PreparedStatement ps = connection.prepareStatement("delete from Artist where ArtistId = ?")
+        ) {
+            ps.setInt(1, id);
+            ps.executeUpdate();
+        }
+        catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public Artist findById(int id) {
+        try (Connection connection = ds.getConnection();
+             PreparedStatement ps = connection.prepareStatement("select * from Artist where ArtistId = ?")
+        ) {
+            ps.setInt(1, id);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                int artistId = rs.getInt("ArtistId");
+                String name = rs.getString("Name");
+
+                return new Artist(artistId, name);
+            }
+            return null;
+        }
+        catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void update(Artist artist) {
+        try (Connection connection = ds.getConnection();
+             PreparedStatement ps = connection.prepareStatement("update Artist set Name = ? where ArtistId = ?")
+        ) {
+            ps.setString(1, artist.getName());
+            ps.setInt(2, artist.getId());
+
+            ps.executeUpdate();
+        }
+        catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
